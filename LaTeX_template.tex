@@ -2,6 +2,7 @@
 % Made by Adnan Berberovic
 % Contact by:
 %	E-mail: adnbe196@student.liu.se
+%	Phone: 070-49 19 607
 
 \documentclass[11pt]{article}
 \usepackage[margin=3cm]{geometry}
@@ -22,13 +23,14 @@
 \usepackage{csquotes} % Spawns an error if not included. Not sure why.
 \usepackage[hidelinks]{hyperref} % To include urls, hyper links and clickable references
 \usepackage[nottoc]{tocbibind} % To include bibliography in ToC
+\usepackage{tikz} % Include tikzpicture
 
 \pagestyle{fancy}
 \date{} % Sets date to blank.
 
 \pagenumbering{roman} % Set roman page numbering before the actual document begins.
 \chead{TYPE OR TITLE OF REPORT} % Replace argument with the type or title of your report.
-\rhead{DATE} % Set date here. \today might be useful here.
+\rhead{DATE} % Set date here.
 \lhead{} % Put anything here.
 \lfoot{COURSE\\INSTITUTION} % Replace COURSE with the course code, INSTITUTION with respective institution.
 \rfoot{AUTHOR} % Replace AUTHOR with your name. Add more text if you deem it necessary.
@@ -49,6 +51,14 @@
 	\stepcounter{cter}
 }
 
+\newcommand{\batsym}{
+	\begin{tikzpicture}[scale=0.1]
+	
+	\draw[fill,black]   (-0.25,1.48) .. controls (-0.1,1.5) and (0.1,1.5) .. (0.25,1.48) -- (0.35,1.92) .. controls (0.425,1.8) and (0.41,1.3) .. (0.45,1.2) .. controls (0.6,1.05) and (1.96,1.05) .. (1.98,2.08) -- (5.93,2.08) .. controls (4.2,1.45) and (4,0.3) .. (4.2,-0.28) .. controls (2.4,-0.09) and (0.4,-0.5) .. (0,-2.052) .. controls (-0.4,-0.5) and (-2.4,-0.09) .. (-4.2,-0.28) .. controls (-4,0.3) and (-4.2,1.45) .. (-5.93,2.08) -- (-1.98,2.08) .. controls (-1.96,1.05) and (-0.6,1.05) .. (-0.45,1.2) .. controls (-0.41,1.3) and (-0.425,1.8) .. (-0.35,1.92) -- (-0.25,1.48);
+	
+	\end{tikzpicture}
+} % (Nolan) Batman symbol. Change the scale if you want bigger/smaller.
+
 \begin{document}
 	\begin{titlepage}
 		\begin{center}
@@ -61,7 +71,7 @@
 			
 			\vspace{2\baselineskip}
 			
-			YYYY-MM-DD	% \today might be useful here instead.
+			YYYY-MM-DD	% Replace with date.
 			
 		\end{center}
 	\end{titlepage}
@@ -99,10 +109,10 @@
 	% The block above is a table block. Change the |l|l| to how many columns you desire. l could be something else.
 	% Check LaTeX reference for how to manage a table.
 	
-	\begin{center}	%Example figure, center and import from the images directory.
-		\includegraphics[scale=0.1]{example_pic}\\ % Scale if needed, replace example_pic with name of picture.
-		\textit{Figure\ccounter Short description of this figure.}
-	\end{center}
+		\begin{center}	%Example figure, center and import from the images directory.
+			\includegraphics[scale=0.1]{example_pic}\\ % Scale if needed, replace example_pic with name of picture.
+			\textit{Figure\ccounter Short description of this figure.}
+		\end{center}
 		
 	\subsection{Subsection}
 	
