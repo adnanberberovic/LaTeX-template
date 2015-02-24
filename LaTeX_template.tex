@@ -1,8 +1,7 @@
-% LaTeX Document Template
+% LaTeX Document Template v1.0.1
 % Made by Adnan Berberovic
-% Contact by:
+% Contact:
 %	E-mail: adnbe196@student.liu.se
-%	Phone: 070-49 19 607
 
 \documentclass[11pt]{article}
 \usepackage[margin=3cm]{geometry}
@@ -19,14 +18,14 @@
 \usepackage{tabu} % Used for tables.
 \usepackage{url} % Allow urls.
 \usepackage{amsmath} % Allow math \begin{equation}, end
-\usepackage[backend=bibtex,style=ieee]{biblatex} % Bibliography package.
+\usepackage[backend=bibtex,style=ieee]{biblatex} % Bibliography package. Use 'biber' instead of 'bibtex' if you're using ShareLaTeX. This is dependant on your default bibliography tool.
 \usepackage{csquotes} % Spawns an error if not included. Not sure why.
 \usepackage[hidelinks]{hyperref} % To include urls, hyper links and clickable references
 \usepackage[nottoc]{tocbibind} % To include bibliography in ToC
 \usepackage{tikz} % Include tikzpicture
 
 \pagestyle{fancy}
-\date{} % Sets date to blank.
+\date{} % Sets date to blank. Use \today to print todays date.
 
 \pagenumbering{roman} % Set roman page numbering before the actual document begins.
 \chead{TYPE OR TITLE OF REPORT} % Replace argument with the type or title of your report.
@@ -76,7 +75,7 @@
 		\end{center}
 	\end{titlepage}
 	
-	\setcounter{secnumdepth}{0} % Prevent numbering of the following sections.
+	\setcounter{secnumdepth}{0} % Prevent section numbering of the following sections.
 	\section*{Abstract}
 	
 	CONTENT OF ABSTRACT 
@@ -123,7 +122,7 @@
 	\end{equation}
 	
 	\begin{itemize}
-		\item First item % Item list example.
+		\item An item % Item list example.
 	\end{itemize}
 	
 	Citation from reference \autocite{glad-06}
@@ -133,7 +132,7 @@
 	\setcounter{secnumdepth}{0} % Prevent page numbering yet again. 
 	\addcontentsline{toc}{section}{Referenser} % Add reference to ToC. Might have to compile TWICE.
 	
-	\printbibliography % Prints bibliography. Check refs.bib file in same directory and make sure you have all
+	\printbibliography % Prints bibliography. Look at refs.bib file in the same directory and make sure you have all
 	% references at hand when autociting them.
 	
 	\pagebreak
