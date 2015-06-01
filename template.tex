@@ -1,9 +1,18 @@
-% LaTeX Document Template v1.0.1
+% LaTeX Document Template v1.1
+
+
+% Changelog v1.1:
+% Added labels to equations, tables, figure
+% Replaced manual graphics insert with \begin{figure}
+% Added a new package: todonotes
+% Added an example with todonotes.
+% Removed batman symbol
+
 % Made by Adnan Berberovic
 % Contact:
 %	E-mail: adnbe196@student.liu.se
 
-\documentclass[11pt]{article}
+\documentclass[11pt]{article} % twocolumn?
 \usepackage[margin=3cm]{geometry}
 \usepackage[swedish]{babel}
 \usepackage[utf8]{inputenc}
@@ -23,6 +32,8 @@
 \usepackage[hidelinks]{hyperref} % To include urls, hyper links and clickable references
 \usepackage[nottoc]{tocbibind} % To include bibliography in ToC
 \usepackage{tikz} % Include tikzpicture
+\usepackage{spverbatim} % Used for code text
+\usepackage{todonotes} % Used for adding notes to document
 
 \pagestyle{fancy}
 \date{} % Sets date to blank. Use \today to print todays date.
@@ -50,13 +61,6 @@
 	\stepcounter{cter}
 }
 
-\newcommand{\batsym}{
-	\begin{tikzpicture}[scale=0.1]
-	
-	\draw[fill,black]   (-0.25,1.48) .. controls (-0.1,1.5) and (0.1,1.5) .. (0.25,1.48) -- (0.35,1.92) .. controls (0.425,1.8) and (0.41,1.3) .. (0.45,1.2) .. controls (0.6,1.05) and (1.96,1.05) .. (1.98,2.08) -- (5.93,2.08) .. controls (4.2,1.45) and (4,0.3) .. (4.2,-0.28) .. controls (2.4,-0.09) and (0.4,-0.5) .. (0,-2.052) .. controls (-0.4,-0.5) and (-2.4,-0.09) .. (-4.2,-0.28) .. controls (-4,0.3) and (-4.2,1.45) .. (-5.93,2.08) -- (-1.98,2.08) .. controls (-1.96,1.05) and (-0.6,1.05) .. (-0.45,1.2) .. controls (-0.41,1.3) and (-0.425,1.8) .. (-0.35,1.92) -- (-0.25,1.48);
-	
-	\end{tikzpicture}
-} % (Nolan) Batman symbol. Change the scale if you want bigger/smaller.
 
 \begin{document}
 	\begin{titlepage}
@@ -79,6 +83,7 @@
 	\section*{Abstract}
 	
 	CONTENT OF ABSTRACT 
+	\todo{Remember to write the absract!}
 	\pagebreak
 	
 	\setcounter{secnumdepth}{2} % Resume numbering of the following sections.
@@ -92,9 +97,10 @@
 	
 	\section{Section} 	% Example section, 
 	
-	CONTENTS OF SECTION
+	CONTENTS OF SECTION, see table \ref{table:example}.
 	
 	\begin{table}[h]
+		\label{table:example}
 		\begin{tabular}{|l|l|} \hline
 			
 			Example&
@@ -107,22 +113,25 @@
 	\end{table}
 	% The block above is a table block. Change the |l|l| to how many columns you desire. l could be something else.
 	% Check LaTeX reference for how to manage a table.
-	
-		\begin{center}	%Example figure, center and import from the images directory.
-			\includegraphics[scale=0.1]{example_pic}\\ % Scale if needed, replace example_pic with name of picture.
-			\textit{Figure\ccounter Short description of this figure.}
-		\end{center}
+		\begin{figure}[!htbp] %Example figure, center and import from the images directory.
+			\centering
+			\includegraphics[scale=0.1]{example_pic} % Scale if needed, replace example_pic with name of picture.
+			\caption{A bear waving}
+			\label{fig:example}
+		\end{figure}
 		
 	\subsection{Subsection}
 	
-	CONTENTS OF SUBSECTION
+	CONTENTS OF SUBSECTION, see figure \ref{fig:example}.
 	
 	\begin{equation}
+		\label{eq:example}
 		ab = ba	% Equation example. Use LaTeX reference page for how to format equations.
 	\end{equation}
 	
 	\begin{itemize}
-		\item An item % Item list example.
+		\item An item 
+		\item An inline equation $ba = ab$, see equation \ref{eq:example} % Item list example.
 	\end{itemize}
 	
 	Citation from reference \autocite{glad-06}
